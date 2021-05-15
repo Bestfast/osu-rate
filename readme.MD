@@ -1,4 +1,4 @@
-#osu-rate
+# osu-rate
 
 osu-rate is a simple  rate converted made by [Bestfast](https://github.com/Bestfast).
 
