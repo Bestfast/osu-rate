@@ -19,7 +19,7 @@ To do so, what the program does is:
 
 ## Installation
 - Download [ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases/latest) and add it to your environment variable. ([short tutorial](https://helpdeskgeek.com/windows-10/add-windows-path-environment-variable/))
-- Install [Python](https://www.python.org/downloads/) (>=3.6 required)
+- Install [Python](https://www.python.org/downloads/) (>=3.8 required)
 - Download the source code of this repository and extract it
 - Run ``pip install -r requirements.txt``
 
@@ -28,7 +28,7 @@ Open gosumemory, then open a cmd window in the folder where you extracted this r
 
 Example: ``python main.py 1.2``
 
-After this you'll have to wait until the conversion ends, then return to the main menu and finally go to the song selection again. Your file will, hopefully, be there
+After this you'll have to wait until the conversion ends, then click F5 in the song selection screen. Your file will, hopefully, be there
 
 ## Issues
-If you have any type of issue contact me on Discord (Bestfast#1564), Telegram(@Bestfast), Twitter(@Bestfastolino) or open an issue here on GitHub.
+If you have any type of issue contact me on Discord (Bestfast#1564), Twitter(@Bestfastolino) or open an issue here on GitHub.
