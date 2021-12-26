@@ -18,7 +18,7 @@ m.rate(RATE, True)
 for offset in m.bpms:
     offset.bpm *= RATE
 
-m.version = f"{m.version} {RATE}x {round(int(m.bpms[0].bpm), 1)}bpm"
+m.version = f"{m.version} {RATE}x {round(m.bpms[0].bpm, 1)}bpm"
 m.audioFileName = jsons['audio'][:-4] + "{}.mp3".format(RATE)
 m.writeFile(FOLDER + jsons['file'][:-4] + " {}.osu".format(RATE))
 
