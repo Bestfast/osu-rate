@@ -30,5 +30,21 @@ Example: ``python main.py 1.2``
 
 After this you'll have to wait until the conversion ends, then click F5 in the song selection screen. Your file will, hopefully, be there
 
+### Optional usage
+```
+usage: main.py [-h] [-od OD] [-nsv] [-nln] rate
+
+osu!mania rate changer.
+
+positional arguments:
+  rate
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -od OD      Change the od to [value]
+  -nsv        Removes all the SVs in a map
+  -nln        Removes all the LNs in a map
+```
+
 ## Issues
 If you have any type of issue contact me on Discord (Bestfast#1564), Twitter(@Bestfastolino) or open an issue here on GitHub.
