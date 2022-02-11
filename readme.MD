@@ -4,7 +4,7 @@ osu-rate is a simple  rate converted made by [Bestfast](https://github.com/Bestf
 
 The program uses the library [reamberPy](https://github.com/Eve-ning/reamberPy) made by [Eve-ning](https://github.com/Eve-ning). Without him and his library this couldn't be possible.
 
-The goal of this program is to automatize the automatize the process to uprate or downrate a chart.
+The goal of this program is to automatize the process to uprate or downrate a chart.
 
 To do so, what the program does is:
 
