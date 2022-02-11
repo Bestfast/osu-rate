@@ -4,6 +4,7 @@ import argparse
 
 import requests
 from reamber.osu.OsuMap import OsuMap
+from reamber.osu.OsuHit import OsuHit
 
 parser = argparse.ArgumentParser(description='osu!mania rate changer.')
 parser.add_argument("rate", type=float)
@@ -22,10 +23,11 @@ RATE = float(args.rate)
 m = OsuMap.read_file(FOLDER + jsons['file'])
 m_ = m.rate(RATE)
 
-m_.version = f"{m_.version} {RATE}x {round(m_.bpms[0].bpm, 1)}bpm"
-
-
-m_.audio_file_name = f"{jsons['audio'][:-4]} {RATE}.mp3"
+if args.rate != 1.0:
+    m_.version = f"{m_.version} {RATE}x {round(m_.bpms[0].bpm, 1)}bpm"
+    m_.audio_file_name = f"{jsons['audio'][:-4]} {RATE}.mp3"
+    os.system(
+        f'ffmpeg -i "{FOLDER + jsons["audio"]}" -filter_complex [0:a]atempo={RATE}[s0] -map [s0] "{FOLDER + m_.audio_file_name}"')
 
 filename = f"{FOLDER + jsons['file'][:-4]} {RATE}"
 
@@ -41,11 +43,12 @@ if args.nsv is True:
     filename += " NSV"
 
 if args.nln is True:
+    for ln in m_.holds:
+        m_.hits = m_.hits.append(OsuHit(ln.offset, int(ln.column)))
     m_.holds.df = m_.holds.df[:0]
     m_.version += " NLN"
     filename += " NLN"
 
+
 filename += ".osu"
 m_.write_file(filename)
-
-os.system(f'ffmpeg -i "{FOLDER + jsons["audio"]}" -filter_complex [0:a]atempo={RATE}[s0] -map [s0] "{FOLDER + m_.audio_file_name}"')
